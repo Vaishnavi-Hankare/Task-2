@@ -1,0 +1,56 @@
+//Number Guessing Game
+import java.util.Scanner;
+import java.awt.*;
+public class Game
+{
+  public static void guessingnum()
+ {
+   Scanner obj=new Scanner(System.in);
+   int num;
+   num=1+(int)(50*Math.random());
+   System.out.println("Enter the number you have to guess :");
+   num=obj.nextInt();
+   int k=3;
+   int i,guess;
+   System.out.println("Number is choosen "+"between 1 to 50 \n"
+                                                                +"Guess the number "+"Within 3 trials");
+      for(i=0;i<k;i++)
+      {
+        System.out.println("Guess the Number :");
+        guess=obj.nextInt();
+        if(num==guess)
+        {
+         System.out.println("Congratulations....!You Guessed the Number");
+         break;
+         }
+        else if(num>guess&&i!=k-i)
+        {
+         System.out.println("The Number is "+" Greater than:"+guess);
+        }
+       else if(num<guess && i!=k-i)
+      {
+        System.out.println("The Number is "+ " Less than :"+guess);
+    }
+}
+       if(i==k)
+    {
+      System.out.println("You have Exhausted"+k+"trials");
+      System.out.println("The Number was:"+num);
+     }
+     }
+           public static void main(String arg[])
+          {
+            try
+          {
+              guessingnum();
+          }
+            catch(Exception e)
+           {
+              System.out.println("Enter the digit only");
+            }
+           finally
+           {
+             System.out.println("Thank You..");
+           }
+}
+}
